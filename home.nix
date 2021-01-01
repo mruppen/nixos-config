@@ -62,6 +62,8 @@ in {
   home.packages = with pkgs; [
     neovim
     ripgrep
+    tree-sitter
+    fd
     nil
     nixpkgs-fmt
     nodejs

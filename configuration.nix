@@ -119,11 +119,14 @@
     dive
     podman-tui
     podman-compose
+    gnumake
+    gcc
   ];
 
   #fonts.packages = with pgks; [
   #  nerd-fonts.jetbrains-mono
   #];
+  fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
 
   system.stateVersion = "25.11"; # Did you read the comment?
 }
