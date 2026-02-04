@@ -1,4 +1,4 @@
-{ config, pkgs, username, ... }:
+{ config, pkgs, inputs, username, ... }:
 let
   flake = "${config.home.homeDirectory}/nixos-config#laptop";
   dotfiles = "${config.home.homeDirectory}/nixos-config/config";
@@ -13,26 +13,32 @@ let
     niri = "niri";
     noctalia = "noctalia";
     waybar = "waybar";
+    fish = "fish";
   };
 in
 {
   imports = [
     ./modules/theme.nix
+    inputs.zen-browser.homeModules.beta
   ];
 
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
   home.stateVersion = "25.11";
-  programs.bash = {
+  #programs.bash = {
+  #  enable = true;
+  #  shellAliases = {
+  #    btw = "echo i use hyprland btw";
+  #    vim = "nvim";
+  #  };
+  #  initExtra = ''
+  #    export PS1='\[\e[38;5;76m\]\u\[\e[0m\] in \[\e[38;5;32m\]\w\[\e[0m\] \\$ '
+  #    nitch
+  #  '';
+  #};
+
+  programs.fish = {
     enable = true;
-    shellAliases = {
-      btw = "echo i use hyprland btw";
-      vim = "nvim";
-    };
-    initExtra = ''
-      export PS1='\[\e[38;5;76m\]\u\[\e[0m\] in \[\e[38;5;32m\]\w\[\e[0m\] \\$ '
-      nitch
-    '';
   };
 
   programs.git = {
@@ -46,6 +52,8 @@ in
       init.defaultBranch = "main";
     };
   };
+
+  programs.zen-browser.enable = true;
 
   home.packages = with pkgs; [
     neovim
