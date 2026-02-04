@@ -78,8 +78,8 @@
     git
     hyprpaper
     xwayland-satellite
-    inputs.noctalia.packages."${system}".default
-    inputs.agenix.packages."${system}".default
+    inputs.noctalia.packages."${stdenv.hostPlatform.system}".default
+    inputs.agenix.packages."${stdenv.hostPlatform.system}".default
     alacritty
     fuzzel
     swaylock

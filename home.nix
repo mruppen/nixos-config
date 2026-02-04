@@ -42,6 +42,7 @@ in
         name  = "Michael Ruppen";
         email = "michael.ruppen@pm.me";
       };
+      pull.rebase = true;
       init.defaultBranch = "main";
     };
   };
@@ -57,6 +58,7 @@ in
     nitch
     rofi
     pcmanfm
+    bitwig-studio
   ];
 
   xdg.configFile = builtins.mapAttrs
