@@ -37,10 +37,6 @@ in
   #  '';
   #};
 
-  programs.fish = {
-    enable = true;
-  };
-
   programs.git = {
     enable = true;
     settings = {

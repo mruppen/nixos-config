@@ -61,6 +61,7 @@
     packages = with pkgs; [
       tree
     ];
+    shell = pkgs.fish;
   };
 
   programs.firefox.enable = true;
