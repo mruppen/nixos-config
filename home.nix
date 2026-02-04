@@ -10,6 +10,8 @@ let
     # wofi = "wofi";
     rofi = "rofi";
     foot = "foot";
+    niri = "niri";
+    noctalia = "noctalia";
     waybar = "waybar";
   };
 in
@@ -31,6 +33,17 @@ in
       export PS1='\[\e[38;5;76m\]\u\[\e[0m\] in \[\e[38;5;32m\]\w\[\e[0m\] \\$ '
       nitch
     '';
+  };
+
+  programs.git = {
+    enable = true;
+    settings = {
+      user = {
+        name  = "Michael Ruppen";
+        email = "michael.ruppen@pm.me";
+      };
+      init.defaultBranch = "main";
+    };
   };
 
   home.packages = with pkgs; [

@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   imports =
@@ -38,6 +38,8 @@
     variant = "";
   };
 
+  services.openssh.enable = true;
+
   console.keyMap = "sg";
 
   services.printing.enable = true;
@@ -76,7 +78,11 @@
     git
     hyprpaper
     xwayland-satellite
-    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.noctalia.packages."${system}".default
+    inputs.agenix.packages."${system}".default
+    alacritty
+    fuzzel
+    swaylock
     qt6Packages.qt5compat
     libsForQt5.qt5.qtgraphicaleffects
     kdePackages.qtbase

@@ -25,12 +25,15 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    agenix.url = "github:ryantm/agenix";
   };
 
   outputs = 
     { 
       self, 
-      nixpkgs, 
+      nixpkgs,
+      agenix,
       ... 
     }@inputs:
     let
@@ -43,6 +46,7 @@
           specialArgs = { inherit inputs username; };
           modules = [
             ./configuration.nix
+            agenix.nixosModules.default
             inputs.home-manager.nixosModules.home-manager 
             {
 	      home-manager = {
