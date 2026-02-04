@@ -59,6 +59,7 @@ in
     rofi
     pcmanfm
     bitwig-studio
+    proton-pass
   ];
 
   xdg.configFile = builtins.mapAttrs

@@ -80,6 +80,7 @@
     xwayland-satellite
     inputs.noctalia.packages."${stdenv.hostPlatform.system}".default
     inputs.agenix.packages."${stdenv.hostPlatform.system}".default
+    inputs.zen-browser-packages."${stdenv.hostPlatform.system}".specific
     alacritty
     fuzzel
     swaylock

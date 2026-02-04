@@ -27,6 +27,8 @@
     };
 
     agenix.url = "github:ryantm/agenix";
+
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
   outputs = 
