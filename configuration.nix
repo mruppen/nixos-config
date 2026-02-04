@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -12,9 +12,13 @@
   networking.hostName = "laptop";
   networking.networkmanager.enable = true;
 
+  hardware.bluetooth.enable = true;
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
+
   time.timeZone = "Europe/Zurich";
 
-  services.getty.autoLoginUser = "michael";
+  services.getty.autologinUser = "michael";
 
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -58,6 +62,7 @@
   };
 
   programs.firefox.enable = true;
+  programs.niri.enable = true;
 
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -70,11 +75,19 @@
     waybar
     git
     hyprpaper
+    xwayland-satellite
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    qt6Packages.qt5compat
+    libsForQt5.qt5.qtgraphicaleffects
+    kdePackages.qtbase
+    kdePackages.qtdeclarative
+    kdePackages.qtstyleplugin-kvantum
+    wallust
   ];
 
-  fonts.packages = with pgks; {
-    nerd-fonts.jetbrains-mono
-  };
+  #fonts.packages = with pgks; [
+  #  nerd-fonts.jetbrains-mono
+  #];
 
   system.stateVersion = "25.11"; # Did you read the comment?
 }

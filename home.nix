@@ -1,6 +1,7 @@
-{ config, pkgs, username ... }:
+{ config, pkgs, username, ... }:
 let
-  dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
+  flake = "${config.home.homeDirectory}/nixos-config#laptop";
+  dotfiles = "${config.home.homeDirectory}/nixos-config/config";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
 
   configs = {
@@ -17,24 +18,18 @@ in
     ./modules/theme.nix
   ];
 
-  home.username = username;
-  home.homeDirectory = "/home/${username}"";
+  home.username = "${username}";
+  home.homeDirectory = "/home/${username}";
   home.stateVersion = "25.11";
   programs.bash = {
     enable = true;
     shellAliases = {
       btw = "echo i use hyprland btw";
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#hyprland-btw";
       vim = "nvim";
     };
     initExtra = ''
       export PS1='\[\e[38;5;76m\]\u\[\e[0m\] in \[\e[38;5;32m\]\w\[\e[0m\] \\$ '
       nitch
-    '';
-    profileExtra = ''
-      if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-          exec uwsm start -S hyprland-uwsm.desktop
-      fi
     '';
   };
 
@@ -49,16 +44,6 @@ in
     nitch
     rofi
     pcmanfm
-    (pkgs.writeShellApplication {
-      name = "ns";
-      runtimeInputs = with pkgs; [
-        fzf
-        (nix-search-tv.overrideAttrs {
-          env.GOEXPERIMENT = "jsonv2";
-        })
-      ];
-      text = ''exec "${pkgs.nix-search-tv.src}/nixpkgs.sh" "$@"'';
-    })
   ];
 
   xdg.configFile = builtins.mapAttrs
@@ -69,4 +54,3 @@ in
     configs;
 
 }
-

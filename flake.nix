@@ -9,12 +9,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix.url = {
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #stylix.url = {
+    #  url = "github:danth/stylix";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
 
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    #zen-browser.url = "github:0xc000022070/zen-browser-flake";
     
     quickshell = {
       url = "github:outfoxxed/quickshell";
@@ -24,7 +24,6 @@
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.quickshell.follows = "quickshell";
     };
   };
 
@@ -43,8 +42,8 @@
           system = "x64_64-linux";
           specialArgs = { inherit inputs username; };
           modules = [
-            ./hosts/laptop/configuration.nix
-            input.home-manager.nixosModules.home-manager 
+            ./configuration.nix
+            inputs.home-manager.nixosModules.home-manager 
             {
 	      home-manager = {
                 useGlobalPkgs = true;
@@ -53,7 +52,7 @@
                 extraSpecialArgs = { inherit inputs username; };
                 users.${username}.imports = [ ./home.nix ];
 	      }; 
-	    };
+	    }
 	  ];
         };
       };
