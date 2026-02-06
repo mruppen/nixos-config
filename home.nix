@@ -64,6 +64,7 @@ in
     pcmanfm
     bitwig-studio
     proton-pass
+    signal-desktop
   ];
 
   xdg.configFile = builtins.mapAttrs

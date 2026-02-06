@@ -11,7 +11,7 @@ input {
 
     touchpad {
         // off
-        tap
+        // tap
         // dwt
         // dwtp
         // drag false
@@ -182,6 +182,11 @@ window-rule {
 
 window-rule {
     match app-id="com.bitwig.BitwigStudio"
+    open-maximized true
+}
+
+window-rule {
+    match app-id=r#"^zen.*$"#
     open-maximized true
 }
 
