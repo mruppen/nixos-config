@@ -65,6 +65,7 @@ in
     bitwig-studio
     proton-pass
     signal-desktop
+    onlyoffice-desktopeditors
   ];
 
   xdg.configFile = builtins.mapAttrs
