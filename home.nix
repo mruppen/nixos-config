@@ -66,6 +66,7 @@ in
     proton-pass
     signal-desktop
     onlyoffice-desktopeditors
+    vcv-rack
   ];
 
   xdg.configFile = builtins.mapAttrs
