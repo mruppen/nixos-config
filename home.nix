@@ -67,6 +67,7 @@ in
     signal-desktop
     onlyoffice-desktopeditors
     dnslookup
+    jetbrains.rider
   ];
 
   xdg.configFile = builtins.mapAttrs
