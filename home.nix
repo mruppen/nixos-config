@@ -68,6 +68,13 @@ in
     onlyoffice-desktopeditors
     dnslookup
     jetbrains.rider
+    (
+        with dotnetCorePackages;
+        combinePackages [
+	    sdk_10_0-bin
+            sdk_8_0-bin
+	]
+    )
   ];
 
   xdg.configFile = builtins.mapAttrs
