@@ -76,6 +76,7 @@ in
 	]
     )
     azure-cli
+    terraform
   ];
 
   xdg.configFile = builtins.mapAttrs
