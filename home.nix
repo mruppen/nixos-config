@@ -75,6 +75,7 @@ in
             sdk_8_0-bin
 	]
     )
+    azure-cli
   ];
 
   xdg.configFile = builtins.mapAttrs
