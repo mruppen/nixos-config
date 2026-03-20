@@ -77,7 +77,6 @@ in
     )
     azure-cli
     terraform
-    citrix_workspace
   ];
 
   xdg.configFile = builtins.mapAttrs
