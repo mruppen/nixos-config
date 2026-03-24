@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   home.packages = with pkgs; [
     adwaita-icon-theme
     gnome-themes-extra
@@ -38,4 +40,3 @@
     XCURSOR_SIZE = "24";
   };
 }
-

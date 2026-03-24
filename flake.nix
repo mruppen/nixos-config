@@ -15,12 +15,12 @@
     #};
 
     #zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    
+
     quickshell = {
       url = "github:outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,36 +37,33 @@
     };
   };
 
-  outputs = 
-    { 
-      self, 
-      nixpkgs,
-      agenix,
-      ... 
-    }@inputs:
-    let
-      username = "michael";
-    in
-    {
-      nixosConfigurations = {
-	laptop = nixpkgs.lib.nixosSystem {
-          system = "x64_64-linux";
-          specialArgs = { inherit inputs username; };
-          modules = [
-            ./configuration.nix
-            agenix.nixosModules.default
-            inputs.home-manager.nixosModules.home-manager 
-            {
-	      home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                backupFileExtension = "backup";
-                extraSpecialArgs = { inherit inputs username; };
-                users.${username}.imports = [ ./home.nix ];
-	      }; 
-	    }
-	  ];
-        };
+  outputs = {
+    self,
+    nixpkgs,
+    agenix,
+    ...
+  } @ inputs: let
+    username = "michael";
+  in {
+    nixosConfigurations = {
+      laptop = nixpkgs.lib.nixosSystem {
+        system = "x64_64-linux";
+        specialArgs = {inherit inputs username;};
+        modules = [
+          ./configuration.nix
+          agenix.nixosModules.default
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "backup";
+              extraSpecialArgs = {inherit inputs username;};
+              users.${username}.imports = [./home.nix];
+            };
+          }
+        ];
       };
     };
+  };
 }

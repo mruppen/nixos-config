@@ -1,5 +1,10 @@
-{ config, pkgs, inputs, username, ... }:
-let
+{
+  config,
+  pkgs,
+  inputs,
+  username,
+  ...
+}: let
   flake = "${config.home.homeDirectory}/nixos-config#laptop";
   dotfiles = "${config.home.homeDirectory}/nixos-config/config";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
@@ -15,8 +20,7 @@ let
     waybar = "waybar";
     fish = "fish";
   };
-in
-{
+in {
   imports = [
     ./modules/theme.nix
     inputs.zen-browser.homeModules.beta
@@ -41,7 +45,7 @@ in
     enable = true;
     settings = {
       user = {
-        name  = "Michael Ruppen";
+        name = "Michael Ruppen";
         email = "michael.ruppen@pm.me";
       };
       pull.rebase = true;
@@ -53,6 +57,9 @@ in
 
   programs.vscode = {
     enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      kamadorueda.alejandra
+    ];
   };
 
   home.packages = with pkgs; [
@@ -73,21 +80,21 @@ in
     dnslookup
     jetbrains.rider
     (
-        with dotnetCorePackages;
+      with dotnetCorePackages;
         combinePackages [
-	    sdk_10_0-bin
-            sdk_8_0-bin
-	]
+          sdk_10_0-bin
+          sdk_8_0-bin
+        ]
     )
     azure-cli
     terraform
   ];
 
-  xdg.configFile = builtins.mapAttrs
+  xdg.configFile =
+    builtins.mapAttrs
     (name: subpath: {
       source = create_symlink "${dotfiles}/${subpath}";
       recursive = true;
     })
     configs;
-
 }
