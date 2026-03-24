@@ -69,6 +69,10 @@
   programs.fish.enable = true;
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = (_: true);
+  nixpkgs.config.permittedInsecurePackages = [
+    "libsoup-2.74.3"
+  ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   environment.systemPackages = with pkgs; [
@@ -92,6 +96,7 @@
     kdePackages.qtdeclarative
     kdePackages.qtstyleplugin-kvantum
     wallust
+    citrix_workspace
   ];
 
   #fonts.packages = with pgks; [

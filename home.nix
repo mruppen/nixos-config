@@ -51,6 +51,10 @@ in
 
   programs.zen-browser.enable = true;
 
+  programs.vscode = {
+    enable = true;
+  };
+
   home.packages = with pkgs; [
     neovim
     ripgrep
