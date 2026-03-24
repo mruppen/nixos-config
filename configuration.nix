@@ -100,6 +100,7 @@
     kdePackages.qtstyleplugin-kvantum
     wallust
     citrix_workspace
+    jq
   ];
 
   #fonts.packages = with pgks; [
