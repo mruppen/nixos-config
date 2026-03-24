@@ -114,6 +114,7 @@ window-rule {
 
 window-rule {
     match app-id="jetbrains-rider"
+    match app-id="Wfica"
 
     open-on-output "DP-2"
     open-maximized true
