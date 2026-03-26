@@ -108,6 +108,7 @@ window-rule {
     match title="Firefox"
     match app-id="com.bitwig.BitwigStudio"
     match app-id=r#"^zen.*$"#
+    match app-id="code"
     
     open-maximized true
 }
