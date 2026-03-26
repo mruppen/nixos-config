@@ -101,6 +101,8 @@
     wallust
     citrix_workspace
     jq
+    zip
+    unzip
   ];
 
   #fonts.packages = with pgks; [
