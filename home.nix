@@ -57,7 +57,7 @@ in {
 
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       kamadorueda.alejandra
       hashicorp.terraform
     ];
