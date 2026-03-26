@@ -59,6 +59,7 @@ in {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
       kamadorueda.alejandra
+      hashicorp.terraform
     ];
   };
 
@@ -87,6 +88,8 @@ in {
         ]
     )
     azure-cli
+    azure-cli-extensions.ssh
+    azure-cli-extensions.bastion
     terraform
   ];
 
