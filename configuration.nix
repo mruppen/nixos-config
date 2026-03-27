@@ -104,6 +104,7 @@
     jq
     zip
     unzip
+    usbutils
   ];
 
   #fonts.packages = with pgks; [
