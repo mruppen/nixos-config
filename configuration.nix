@@ -72,6 +72,11 @@
   programs.niri.enable = true;
   programs.fish.enable = true;
 
+  powerManagement.enable = true;
+  services.upower = {
+    enable = true;
+  };
+
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = _: true;
   nixpkgs.config.permittedInsecurePackages = [
