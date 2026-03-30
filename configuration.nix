@@ -58,6 +58,21 @@
     jack.enable = true;
   };
 
+  virtualisation.containers.enable = true;
+  virtualisation = {
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
+
+  environment.systemPackages = with pkgs; [
+    dive # look into docker image layers
+    podman-tui # status of containers in the terminal
+    podman-compose # start group of containers for dev
+  ];
+
   users.users.michael = {
     isNormalUser = true;
     description = "Michael Ruppen";
@@ -73,9 +88,6 @@
   programs.fish.enable = true;
 
   powerManagement.enable = true;
-  services.upower = {
-    enable = true;
-  };
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = _: true;
