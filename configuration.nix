@@ -67,12 +67,6 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    dive # look into docker image layers
-    podman-tui # status of containers in the terminal
-    podman-compose # start group of containers for dev
-  ];
-
   users.users.michael = {
     isNormalUser = true;
     description = "Michael Ruppen";
@@ -122,6 +116,9 @@
     zip
     unzip
     usbutils
+    dive
+    podman-tui
+    podman-compose  
   ];
 
   #fonts.packages = with pgks; [
