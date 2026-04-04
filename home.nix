@@ -91,6 +91,7 @@ in {
     azure-cli-extensions.ssh
     azure-cli-extensions.bastion
     terraform
+    ardour
   ];
 
   xdg.configFile =
