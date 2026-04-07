@@ -118,7 +118,7 @@
     usbutils
     dive
     podman-tui
-    podman-compose  
+    podman-compose
   ];
 
   #fonts.packages = with pgks; [
