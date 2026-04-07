@@ -90,6 +90,7 @@ in {
           sdk_8_0-bin
         ]
     )
+    dotnet-ef
     azure-cli
     azure-cli-extensions.ssh
     azure-cli-extensions.bastion
