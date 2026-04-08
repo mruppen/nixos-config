@@ -65,7 +65,8 @@ in {
       hashicorp.terraform
       ms-dotnettools.vscodeintellicode-csharp
       ms-dotnettools.csharp
-      ms-vscode.powershell      
+      ms-vscode.powershell
+      zaaack.markdown-editor
     ];
   };
 
