@@ -63,6 +63,9 @@ in {
     profiles.default.extensions = with pkgs.vscode-extensions; [
       kamadorueda.alejandra
       hashicorp.terraform
+      ms-dotnettools.vscodeintellicode-csharp
+      ms-dotnettools.csharp
+      ms-vscode.powershell      
     ];
   };
 
