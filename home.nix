@@ -53,6 +53,7 @@ in {
       };
       pull.rebase = true;
       init.defaultBranch = "main";
+      credential.helper="store";
     };
   };
 
