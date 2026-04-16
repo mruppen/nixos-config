@@ -89,6 +89,7 @@ in {
     azure-cli-extensions.bastion
     terraform
     ardour
+    openssl
   ];
 
   xdg.configFile =
