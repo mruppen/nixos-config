@@ -56,6 +56,7 @@ in {
       ms-dotnettools.csharp
       ms-vscode.powershell
       zaaack.markdown-editor
+      anthropic.claude-code
     ];
   };
 
