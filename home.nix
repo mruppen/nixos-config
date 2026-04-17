@@ -90,6 +90,7 @@ in {
     terraform
     ardour
     openssl
+    claude-code
   ];
 
   xdg.configFile =
