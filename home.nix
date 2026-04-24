@@ -56,7 +56,6 @@ in {
       ms-dotnettools.csharp
       ms-vscode.powershell
       zaaack.markdown-editor
-      anthropic.claude-code
     ];
   };
 
@@ -91,7 +90,6 @@ in {
     terraform
     ardour
     openssl
-    claude-code
   ];
 
   xdg.configFile =
