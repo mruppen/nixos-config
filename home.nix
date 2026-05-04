@@ -95,6 +95,13 @@ in {
     openssl
   ];
 
+  # home.nix
+  home.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
+
+  fonts.fontconfig.enable = true;
+
   xdg.configFile =
     builtins.mapAttrs
     (name: subpath: {
