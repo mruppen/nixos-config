@@ -121,6 +121,7 @@
     podman-compose
     gnumake
     gcc
+    oh-my-fish
   ];
 
   #fonts.packages = with pgks; [
