@@ -21,6 +21,8 @@
 
   time.timeZone = "Europe/Zurich";
 
+  gtk.gkt4.theme = null;
+
   services.getty.autologinUser = "michael";
 
   i18n.defaultLocale = "en_US.UTF-8";
