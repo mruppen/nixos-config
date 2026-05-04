@@ -79,6 +79,13 @@
 
   programs.firefox.enable = true;
   programs.niri.enable = true;
+  
+  #programs.sway = {
+  #  enable = true;
+  #  wrapperFeatures.gtk = true;
+  #};
+  #services.gnome.gnome-keyring.enable = true;
+
   programs.fish.enable = true;
 
   powerManagement.enable = true;
@@ -95,7 +102,7 @@
     wget
     foot
     kitty
-    waybar
+    #waybar
     git
     hyprpaper
     xwayland-satellite
@@ -122,6 +129,8 @@
     gnumake
     gcc
     oh-my-fish
+    #wl-clipboard
+    #mako
   ];
 
   #fonts.packages = with pgks; [

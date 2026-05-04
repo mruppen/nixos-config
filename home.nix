@@ -18,6 +18,7 @@
     noctalia = "noctalia";
     waybar = "waybar";
     fish = "fish";
+    sway = "sway";
   };
 in {
   imports = [
