@@ -93,10 +93,6 @@ in {
     terraform
     ardour
     openssl
-  ];
-
-  # home.nix
-  home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
 
