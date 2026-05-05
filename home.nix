@@ -94,7 +94,6 @@ in {
     ardour
     openssl
     nerd-fonts.jetbrains-mono
-    rustup
   ];
 
   fonts.fontconfig.enable = true;
