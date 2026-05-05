@@ -102,7 +102,6 @@
     wget
     foot
     kitty
-    #waybar
     git
     hyprpaper
     xwayland-satellite
@@ -129,8 +128,6 @@
     gnumake
     gcc
     oh-my-fish
-    #wl-clipboard
-    #mako
   ];
 
   system.stateVersion = "25.11"; # Did you read the comment?
