@@ -128,6 +128,8 @@
     gnumake
     gcc
     oh-my-fish
+    nix-index
+    nix-locate
   ];
 
   system.stateVersion = "25.11"; # Did you read the comment?
