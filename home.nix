@@ -94,6 +94,9 @@ in {
     ardour
     openssl
     nerd-fonts.jetbrains-mono
+    rustc
+    rust-analyzer
+    cargo
   ];
 
   fonts.fontconfig.enable = true;
