@@ -79,13 +79,6 @@
 
   programs.firefox.enable = true;
   programs.niri.enable = true;
-  
-  #programs.sway = {
-  #  enable = true;
-  #  wrapperFeatures.gtk = true;
-  #};
-  #services.gnome.gnome-keyring.enable = true;
-
   programs.fish.enable = true;
 
   powerManagement.enable = true;
