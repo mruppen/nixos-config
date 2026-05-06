@@ -77,6 +77,7 @@
     shell = pkgs.fish;
   };
 
+  programs.nix-ld.enable = true;
   programs.firefox.enable = true;
   programs.niri.enable = true;
   programs.fish.enable = true;
