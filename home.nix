@@ -94,6 +94,7 @@ in {
     ardour
     openssl
     nerd-fonts.jetbrains-mono
+    testdisk
   ];
 
   fonts.fontconfig.enable = true;
