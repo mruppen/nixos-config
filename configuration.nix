@@ -122,6 +122,7 @@
     gnumake
     gcc
     oh-my-fish
+    direnv
   ];
 
   system.stateVersion = "25.11"; # Did you read the comment?
