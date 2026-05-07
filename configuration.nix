@@ -19,7 +19,7 @@
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
 
-  time.timeZone = "Europe/Zuricconfig.gkt.theme";
+  time.timeZone = "Europe/Zurich";
 
   services.getty.autologinUser = "michael";
 
