@@ -70,7 +70,7 @@
   users.users.michael = {
     isNormalUser = true;
     description = "Michael Ruppen";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "podman"];
     packages = with pkgs; [
       tree
     ];

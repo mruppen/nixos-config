@@ -767,7 +767,7 @@ require('lazy').setup({
         -- <c-k>: Toggle signature help
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
-        preset = 'default',
+        preset = 'enter',
         
         -- Add Ctrl+Enter to accept the selected suggestion
         ['<C-CR>'] = { 'accept' },   -- or 'accept_confirm' depending on version  
