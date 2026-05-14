@@ -95,6 +95,7 @@ in {
     openssl
     nerd-fonts.jetbrains-mono
     testdisk
+    sparrow
   ];
 
   fonts.fontconfig.enable = true;
