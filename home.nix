@@ -96,6 +96,7 @@ in {
     nerd-fonts.jetbrains-mono
     testdisk
     sparrow
+    qjackctl
   ];
 
   fonts.fontconfig.enable = true;
