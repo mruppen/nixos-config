@@ -3,3 +3,4 @@ if status is-interactive
 end
 
 direnv hook fish | source
+set -g theme_nerd_fonts yes
