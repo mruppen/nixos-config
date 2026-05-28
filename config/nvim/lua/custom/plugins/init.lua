@@ -5,6 +5,4 @@
 
 ---@module 'lazy'
 ---@type LazySpec
-return {
-  "nyoom-engineering/oxocarbon.nvim"
-}
+return {}
