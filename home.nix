@@ -97,6 +97,7 @@ in {
     testdisk
     sparrow
     qjackctl
+    devenv
   ];
 
   fonts.fontconfig.enable = true;
