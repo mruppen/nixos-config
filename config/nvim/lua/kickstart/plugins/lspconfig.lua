@@ -126,6 +126,7 @@ return {
         -- gopls = {},
         -- pyright = {},
         rust_analyzer = {},
+        nil = {},
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
