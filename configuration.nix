@@ -69,6 +69,12 @@
     jack.enable = true;
   };
 
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
   virtualisation.containers.enable = true;
   virtualisation = {
     podman = {
