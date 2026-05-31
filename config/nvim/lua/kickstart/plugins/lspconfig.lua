@@ -126,7 +126,7 @@ return {
         -- gopls = {},
         -- pyright = {},
         rust_analyzer = {},
-        nil = {},
+        markdownlint = {},
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
@@ -135,7 +135,7 @@ return {
         -- ts_ls = {},
 
         stylua = {}, -- Used to format Lua code
-
+ 
         -- Special Lua Config, as recommended by neovim help docs
         lua_ls = {
           on_init = function(client)

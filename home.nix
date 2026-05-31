@@ -98,6 +98,7 @@ in {
     sparrow
     qjackctl
     devenv
+    markdownlint-cli2
   ];
 
   fonts.fontconfig.enable = true;
