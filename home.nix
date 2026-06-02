@@ -99,6 +99,7 @@ in {
     qjackctl
     devenv
     markdownlint-cli2
+    wl-clipboard
   ];
 
   fonts.fontconfig.enable = true;
