@@ -102,6 +102,10 @@ in {
     wl-clipboard
   ];
 
+  home.sessionPath = [
+    "/home/michael/.dotnet/tools"
+  ]
+
   fonts.fontconfig.enable = true;
 
   xdg.configFile =
