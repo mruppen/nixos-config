@@ -104,7 +104,7 @@ in {
 
   home.sessionPath = [
     "/home/michael/.dotnet/tools"
-  ]
+  ];
 
   fonts.fontconfig.enable = true;
 
