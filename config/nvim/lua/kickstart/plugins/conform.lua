@@ -20,8 +20,12 @@ return {
       format_on_save = function(bufnr)
         -- You can specify filetypes to autoformat on save here:
         local enabled_filetypes = {
-          -- lua = true,
+          lua = true,
           -- python = true,
+          cs = true,
+          csproj = true,
+          json = true,
+          jsonc = true,
         }
         if enabled_filetypes[vim.bo[bufnr].filetype] then
           return { timeout_ms = 500 }
@@ -40,7 +44,22 @@ return {
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        --
+        cs = { 'csharpier' },
+        csproj = { 'csharpier' },
+        json = { 'prettier' },
+        jsonc = { 'prettier' },
       },
+      formatters = {
+        csharpier = {
+          command = 'csharpier',
+          args = {
+            "format",
+            "--write-stdout"
+          },
+          to_stdin = true,
+        }
+      }
     },
   },
 }
