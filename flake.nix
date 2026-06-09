@@ -35,12 +35,15 @@
         home-manager.follows = "home-manager";
       };
     };
+
+    roslyn-ls.url = "path:home/michael/nixos_config/modules/roslyn-ls";
   };
 
   outputs = {
     self,
     nixpkgs,
     agenix,
+    roslyn-ls,
     ...
   } @ inputs: let
     username = "michael";
@@ -50,6 +53,7 @@
         system = "x64_64-linux";
         specialArgs = {inherit inputs username;};
         modules = [
+          roslyn-ls.homeManagerModules.default
           ./configuration.nix
           agenix.nixosModules.default
           inputs.home-manager.nixosModules.home-manager
