@@ -1,5 +1,5 @@
-{
-  description = "Roslyn Language Server (latest prerelease via Nixpkgs unstable)";
+{{
+  description = "Roslyn Language Server (latest prerelease via buildDotnetGlobalTool)";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -7,21 +7,17 @@
 
   outputs = { self, nixpkgs }:
     let
-      system = "x86_64-linux"; # Change to aarch64-linux if on ARM
-      pkgs = import nixpkgs {
-        inherit system;
-        overlays = [ self.overlays.default ];
-      };
+      system = "x86_64-linux"; # Change if needed (aarch64-linux supported)
+      pkgs = import nixpkgs { inherit system; };
     in {
-      overlays.default = final: prev: {
-        roslyn-language-server = final.roslyn-ls; # Alias for convenience
-      };
+      packages.${system}.roslyn-language-server = pkgs.callPackage ./roslyn-language-server.nix {};
 
-      packages.${system}.default = pkgs.roslyn-ls;
-
-      # For easy use in home-manager
+      # Home Manager module for easy import
       homeManagerModules.default = { pkgs, ... }: {
-        home.packages = [ pkgs.roslyn-ls ];
+        home.packages = [ self.packages.${pkgs.system}.roslyn-language-server ];
       };
-    };
-}
+
+      # Optional: overlay
+      overlays.default = final: prev: {
+        roslyn-language-server = final.callPackage ./roslyn-language-server.nix {};
+      };
