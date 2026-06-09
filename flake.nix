@@ -36,7 +36,7 @@
       };
     };
 
-    roslyn-ls.url = "path:home/michael/nixos_config/modules/roslyn-ls";
+    roslyn-ls.url = "path:modules/roslyn-ls";
   };
 
   outputs = {

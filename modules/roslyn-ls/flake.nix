@@ -1,4 +1,4 @@
-{{
+{
   description = "Roslyn Language Server (latest prerelease via buildDotnetGlobalTool)";
 
   inputs = {
@@ -21,3 +21,5 @@
       overlays.default = final: prev: {
         roslyn-language-server = final.callPackage ./roslyn-language-server.nix {};
       };
+    };
+}
