@@ -35,15 +35,12 @@
         home-manager.follows = "home-manager";
       };
     };
-
-    roslyn-ls.url = "path:modules/roslyn-ls";
   };
 
   outputs = {
     self,
     nixpkgs,
     agenix,
-    roslyn-ls,
     ...
   } @ inputs: let
     username = "michael";

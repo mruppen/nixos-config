@@ -8,7 +8,7 @@
   flake = "${config.home.homeDirectory}/nixos-config#laptop";
   dotfiles = "${config.home.homeDirectory}/nixos-config/config";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
-  roslynFlake = builtins.getFlake "path:/home/michael/nix/roslyn-ls-flake";
+  # roslynFlake = builtins.getFlake "path:modules/roslyn-ls/a799d3e3886da994fa307f817a6bc705ae538eeb";
   
   configs = {
     hypr = "hypr";
@@ -101,7 +101,8 @@ in {
     devenv
     markdownlint-cli2
     wl-clipboard
-    roslynFlake.packages.${pkgs.system}.default
+    # roslynFlake.packages.${pkgs.system}.roslyn-language-server
+    roslyn-ls
   ];
 
   fonts.fontconfig.enable = true;
