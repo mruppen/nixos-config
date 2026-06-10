@@ -102,6 +102,7 @@ in {
     markdownlint-cli2
     wl-clipboard
     # roslynFlake.packages.${pkgs.system}.roslyn-language-server
+    (pkgs.dotnetCorePackages.tool "EasyDotnet" "3.3.1" "sha256-/MCI2xjOiyqVK3qPqA0vVJG+ZZocna7zPDqo7H5CFt4=")
   ];
 
   fonts.fontconfig.enable = true;
