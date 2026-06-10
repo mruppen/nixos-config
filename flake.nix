@@ -53,7 +53,6 @@
         system = "x64_64-linux";
         specialArgs = {inherit inputs username;};
         modules = [
-          roslyn-ls.homeManagerModules.default
           ./configuration.nix
           agenix.nixosModules.default
           inputs.home-manager.nixosModules.home-manager
