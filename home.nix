@@ -102,7 +102,6 @@ in {
     markdownlint-cli2
     wl-clipboard
     # roslynFlake.packages.${pkgs.system}.roslyn-language-server
-    roslyn-ls
   ];
 
   fonts.fontconfig.enable = true;

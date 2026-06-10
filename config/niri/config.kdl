@@ -78,8 +78,6 @@ layout {
     }
 }
 
-spawn-at-startup "qs" "-c" "noctalia-shell"
-
 hotkey-overlay {
      skip-at-startup
 }
@@ -395,3 +393,5 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 }
+
+spawn-at-startup "qs" "-c" "noctalia-shell"
