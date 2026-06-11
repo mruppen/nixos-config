@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   inputs,
   username,
   ...
@@ -8,7 +9,6 @@
   flake = "${config.home.homeDirectory}/nixos-config#laptop";
   dotfiles = "${config.home.homeDirectory}/nixos-config/config";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
-  # roslynFlake = builtins.getFlake "path:modules/roslyn-ls/a799d3e3886da994fa307f817a6bc705ae538eeb";
   
   configs = {
     hypr = "hypr";
@@ -88,6 +88,7 @@ in {
         ]
     )
     dotnet-ef
+    roslyn-ls
     azure-cli
     azure-cli-extensions.ssh
     azure-cli-extensions.bastion
@@ -101,8 +102,6 @@ in {
     devenv
     markdownlint-cli2
     wl-clipboard
-    # roslynFlake.packages.${pkgs.system}.roslyn-language-server
-    (pkgs.dotnetCorePackages.tool "EasyDotnet" "3.3.1" "sha256-/MCI2xjOiyqVK3qPqA0vVJG+ZZocna7zPDqo7H5CFt4=")
   ];
 
   fonts.fontconfig.enable = true;
