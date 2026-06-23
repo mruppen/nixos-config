@@ -105,8 +105,9 @@
   nixpkgs.config.allowUnfreePredicate = _: true;
   nixpkgs.config.permittedInsecurePackages = [
     "libsoup-2.74.3"
-    "citrix-workspace-26.01.0.150"
+    "citrix-workspace"
   ];
+  nixpgs.config.problem
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   environment.systemPackages = with pkgs; [
