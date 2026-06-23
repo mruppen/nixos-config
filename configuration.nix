@@ -107,7 +107,6 @@
     "libsoup-2.74.3"
     "citrix-workspace"
   ];
-  nixpgs.config.problem
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   environment.systemPackages = with pkgs; [
