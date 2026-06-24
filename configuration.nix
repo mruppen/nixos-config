@@ -108,7 +108,9 @@
     "citrix-workspace"
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
-
+  nixpkgs.config.problems.handlers = {
+    citrix-workspace.broken = "warn"; # or "ignore"
+  };
   environment.systemPackages = with pkgs; [
     vim
     wget
