@@ -79,7 +79,7 @@ in {
     signal-desktop
     onlyoffice-desktopeditors
     dnslookup
-    jetbrains.rider
+    #jetbrains.rider
     (
       with dotnetCorePackages;
         combinePackages [

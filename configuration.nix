@@ -105,6 +105,7 @@
   nixpkgs.config.allowUnfreePredicate = _: true;
   nixpkgs.config.permittedInsecurePackages = [
     "libsoup-2.74.3"
+    "libsoup"
     "citrix-workspace"
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -131,7 +132,7 @@
     kdePackages.qtdeclarative
     kdePackages.qtstyleplugin-kvantum
     wallust
-    citrix_workspace
+    #citrix_workspace
     jq
     zip
     unzip
