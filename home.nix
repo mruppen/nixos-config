@@ -102,6 +102,7 @@ in {
     devenv
     markdownlint-cli2
     wl-clipboard
+    teams-for-linux
   ];
 
   fonts.fontconfig.enable = true;
