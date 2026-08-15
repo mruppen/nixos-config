@@ -25,6 +25,7 @@ in {
   imports = [
     ./modules/theme.nix
     inputs.zen-browser.homeModules.beta
+    inputs.reaper-flake.homeModules.reaper
   ];
 
   home.username = "${username}";
@@ -59,6 +60,29 @@ in {
       ms-vscode.powershell
       zaaack.markdown-editor
     ];
+  };
+
+  programs.reaper = {
+    enable = true;
+
+    extensions = {
+      reapack.enable = true;
+      sws = {
+        enable = true;
+        colors = [
+          "#F5E0E6"
+          "#F2CDCD"
+          "#F5C2E7"
+          "#CBA6F7"
+        ];
+      };
+    };
+
+    preferences = {
+      general.startupSettings.showSplashScreenOnStartup = false;
+      project.trackSendDefaults.trackVolumeFaderGain = -10.0;
+      plugIns.reascript.python.enable = true;
+    };
   };
 
   home.packages = with pkgs; [

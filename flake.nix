@@ -35,6 +35,8 @@
         home-manager.follows = "home-manager";
       };
     };
+
+    reaper-flake.url = "github:9Prestidigitator/reaper-flake";
   };
 
   outputs = {
