@@ -87,7 +87,7 @@
   users.users.michael = {
     isNormalUser = true;
     description = "Michael Ruppen";
-    extraGroups = ["networkmanager" "wheel" "podman"];
+    extraGroups = ["networkmanager" "wheel" "podman" "adbusers"];
     packages = with pkgs; [
       tree
     ];
@@ -144,6 +144,7 @@
     gcc
     oh-my-fish
     direnv
+    android-tools
   ];
 
   system.stateVersion = "26.05"; # Did you read the comment?
