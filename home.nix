@@ -80,36 +80,51 @@ in {
       reapack = {
         enable = true;
         repositories = [
-    {
-      name = "Bird-Bird";
-      url = "https://github.com/Bird-Bird/ReaScript_Testing/raw/main/index.xml";
+          {
+            name = "Bird-Bird";
+            url = "https://github.com/Bird-Bird/ReaScript_Testing/raw/main/index.xml";
+          }
+          {
+            name = "reaper-keys";
+            url = "https://raw.githubusercontent.com/gwatcha/reaper-keys/master/index.xml";
+          }
+        ];
+
+        packages = [
+        {
+          repository = "ReaTeam Extensions";
+          category = "API";
+          name = "js_ReaScriptAPI.ext";
+        }
+        {
+          repository = "ReaTeam Extensions";
+          category = "API";
+          name = "reaper_imgui.ext";
+        }
+        {
+          repository = "reaper-keys";
+          category = "Scripts";
+          name = "install-reaper-keys.lua";
+        }
+      ];                            
+
+      synchronizeOnActivation = true;
     };
-    {
-      name = "reaper-keys";
-      url = "https://raw.githubusercontent.com/gwatcha/reaper-keys/master/index.xml";
-    }
-  ];
 
-  packages = [
-    {
-      repository = "ReaTeam Extensions";
-      category = "API";
-      name = "js_ReaScriptAPI.ext";
-    }
-    {
-      repository = "ReaTeam Extensions";
-      category = "API";
-      name = "reaper_imgui.ext";
-    }
-    {
-      repository = "reaper-keys";
-      category = "Scripts";
-      name = "install-reaper-keys.lua";
-    }
-  ];
+    theme = {
+      active = "Reapertips Theme.ReaperThemeZip";
+      packages = [
+        inputs.reaper-flake.packages.${pkgs.system}.reapertips-theme
+        inputs.reaper-flake.packages.${pkgs.system}.smooth6-theme
+      ];
+      colorThemes = [./themes/MyTheme.ReaperThemeZip];
+    };
 
-  synchronizeOnActivation = true;
-  
+    # Linux SWELL UI colors. This does not affect macOS's native UI.
+    swell.colortheme = {
+      enable = true;
+      preset = inputs.reaper-flake.packages.${pkgs.system}.reapertips-theme;
+    };
 
     preferences = {
       general.startupSettings.showSplashScreenOnStartup = false;
