@@ -77,7 +77,6 @@ in {
     ];
 
     extensions = {
-      reapack.enable = true;
       sws = {
         enable = true;
         colors = [
