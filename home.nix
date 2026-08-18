@@ -63,6 +63,87 @@ in {
     ];
   };
 
+  programs.reaper = {
+    enable = true;
+
+    packages = with pkgs; [
+      freetype
+      libpng
+      zlib
+      fontconfig
+      libepoxy
+      gtk3
+      cairo
+      glib
+    ];
+
+    extensions = {
+      sws = {
+        enable = true;
+        colors = [
+          "#F5E0E6"
+          "#F2CDCD"
+          "#F5C2E7"
+          "#CBA6F7"
+        ];
+      };
+
+      reapack = {
+        enable = true;
+        repositories = [
+          {
+            name = "Bird-Bird";
+            url = "https://github.com/Bird-Bird/ReaScript_Testing/raw/main/index.xml";
+          }
+          {
+            name = "reaper-keys";
+            url = "https://raw.githubusercontent.com/gwatcha/reaper-keys/master/index.xml";
+          }
+        ];
+
+        packages = [
+        {
+          repository = "ReaTeam Extensions";
+          category = "API";
+          name = "js_ReaScriptAPI.ext";
+        }
+        {
+          repository = "ReaTeam Extensions";
+          category = "API";
+          name = "reaper_imgui.ext";
+        }
+        {
+          repository = "reaper-keys";
+          category = "Scripts";
+          name = "install-reaper-keys.lua";
+        }
+      ];                            
+
+      synchronizeOnActivation = true;
+    };
+
+    theme = {
+      active = "Reapertips Theme.ReaperThemeZip";
+      packages = [
+        inputs.reaper-flake.packages.${pkgs.system}.reapertips-theme
+        inputs.reaper-flake.packages.${pkgs.system}.smooth6-theme
+      ];
+      colorThemes = [./themes/MyTheme.ReaperThemeZip];
+    };
+
+    # Linux SWELL UI colors. This does not affect macOS's native UI.
+    swell.colortheme = {
+      enable = true;
+      preset = inputs.reaper-flake.packages.${pkgs.system}.reapertips-theme;
+    };
+
+    preferences = {
+      general.startupSettings.showSplashScreenOnStartup = false;
+      project.trackSendDefaults.trackVolumeFaderGain = -10.0;
+      plugIns.reascript.python.enable = true;
+    };
+  };
+
   home.packages = with pkgs; [
     neovim
     ripgrep
