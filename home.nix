@@ -25,7 +25,7 @@ in {
   imports = [
     ./modules/theme.nix
     inputs.zen-browser.homeModules.beta
-    inputs.reaper-flake.homeModules.reaper
+    # inputs.reaper-flake.homeModules.reaper
   ];
 
   home.username = "${username}";
@@ -52,6 +52,7 @@ in {
 
   programs.vscode = {
     enable = true;
+
     profiles.default.extensions = with pkgs.vscode-extensions; [
       kamadorueda.alejandra
       hashicorp.terraform
@@ -59,7 +60,7 @@ in {
       ms-dotnettools.csharp
       ms-vscode.powershell
       zaaack.markdown-editor
-      vscode-marketplace.nix-ide
+      jnoortheen.nix-ide
     ];
   };
 
@@ -104,6 +105,7 @@ in {
     markdownlint-cli2
     wl-clipboard
     teams-for-linux
+    reaper
   ];
 
   fonts.fontconfig.enable = true;
@@ -115,4 +117,4 @@ in {
       recursive = true;
     })
     configs;
-};
+}
