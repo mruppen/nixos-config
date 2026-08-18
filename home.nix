@@ -195,4 +195,4 @@ in {
       recursive = true;
     })
     configs;
-}
+};
