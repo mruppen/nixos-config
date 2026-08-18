@@ -43,13 +43,14 @@
     self,
     nixpkgs,
     agenix,
+    reaper-flake,
     ...
   } @ inputs: let
     username = "michael";
   in {
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
-        system = "x64_64-linux";
+        system = "x86_64-linux";
         specialArgs = {inherit inputs username;};
         modules = [
           ./configuration.nix

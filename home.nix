@@ -9,7 +9,7 @@
   flake = "${config.home.homeDirectory}/nixos-config#laptop";
   dotfiles = "${config.home.homeDirectory}/nixos-config/config";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
-  
+
   configs = {
     hypr = "hypr";
     nvim = "nvim";
@@ -44,7 +44,7 @@ in {
       };
       pull.rebase = true;
       init.defaultBranch = "main";
-      credential.helper="store";
+      credential.helper = "store";
     };
   };
 
@@ -76,7 +76,40 @@ in {
           "#CBA6F7"
         ];
       };
+
+      reapack = {
+        enable = true;
+        repositories = [
+    {
+      name = "Bird-Bird";
+      url = "https://github.com/Bird-Bird/ReaScript_Testing/raw/main/index.xml";
     };
+    {
+      name = "reaper-keys";
+      url = "https://raw.githubusercontent.com/gwatcha/reaper-keys/master/index.xml";
+    }
+  ];
+
+  packages = [
+    {
+      repository = "ReaTeam Extensions";
+      category = "API";
+      name = "js_ReaScriptAPI.ext";
+    }
+    {
+      repository = "ReaTeam Extensions";
+      category = "API";
+      name = "reaper_imgui.ext";
+    }
+    {
+      repository = "reaper-keys";
+      category = "Scripts";
+      name = "install-reaper-keys.lua";
+    }
+  ];
+
+  synchronizeOnActivation = true;
+  
 
     preferences = {
       general.startupSettings.showSplashScreenOnStartup = false;
@@ -84,6 +117,18 @@ in {
       plugIns.reascript.python.enable = true;
     };
   };
+
+  # ReaImGui dependencies
+  programs.reaper.packages = with pkgs; [
+    freetype
+    libpng
+    zlib
+    fontconfig
+    libepoxy
+    gtk3
+    cairo
+    glib
+  ];
 
   home.packages = with pkgs; [
     neovim
