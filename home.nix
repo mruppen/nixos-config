@@ -65,6 +65,17 @@ in {
   programs.reaper = {
     enable = true;
 
+    packages = with pkgs; [
+      freetype
+      libpng
+      zlib
+      fontconfig
+      libepoxy
+      gtk3
+      cairo
+      glib
+    ];
+
     extensions = {
       reapack.enable = true;
       sws = {
@@ -133,18 +144,6 @@ in {
     };
   };
 
-  # ReaImGui dependencies
-  programs.reaper.packages = with pkgs; [
-    freetype
-    libpng
-    zlib
-    fontconfig
-    libepoxy
-    gtk3
-    cairo
-    glib
-  ];
-
   home.packages = with pkgs; [
     neovim
     ripgrep
@@ -177,7 +176,6 @@ in {
     azure-cli-extensions.ssh
     azure-cli-extensions.bastion
     terraform
-    ardour
     openssl
     nerd-fonts.jetbrains-mono
     testdisk
