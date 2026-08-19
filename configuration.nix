@@ -75,6 +75,8 @@
     openFirewall = true;
   };
 
+  services.gvfs.enable = true;
+
   virtualisation.containers.enable = true;
   virtualisation = {
     podman = {
