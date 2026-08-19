@@ -106,6 +106,7 @@ in {
     wl-clipboard
     teams-for-linux
     reaper
+    ir-lv2 
   ];
 
   fonts.fontconfig.enable = true;

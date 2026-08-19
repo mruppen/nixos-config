@@ -47,6 +47,7 @@
 
   services.printing.enable = true;
   services.udisks2.enable = true;
+  services.gvfs.enable = true;
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -145,7 +146,7 @@
     oh-my-fish
     direnv
     android-tools
-    jmtpfs
+    android-file-transfer 
   ];
 
   system.stateVersion = "26.05"; # Did you read the comment?
