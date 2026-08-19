@@ -75,8 +75,6 @@
     openFirewall = true;
   };
 
-  services.gvfs.enable = true;
-
   virtualisation.containers.enable = true;
   virtualisation = {
     podman = {
@@ -147,6 +145,7 @@
     oh-my-fish
     direnv
     android-tools
+    jmtpfs
   ];
 
   system.stateVersion = "26.05"; # Did you read the comment?
