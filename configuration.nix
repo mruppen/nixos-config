@@ -76,19 +76,23 @@
     openFirewall = true;
   };
 
-  virtualisation.containers.enable = true;
   virtualisation = {
-    podman = {
+    # podman = {
+    #  enable = true;
+    #  dockerCompat = true;
+    #  defaultNetwork.settings.dns_enabled = true;
+    #};
+    docker = {
       enable = true;
-      dockerCompat = true;
-      defaultNetwork.settings.dns_enabled = true;
+
     };
   };
 
   users.users.michael = {
     isNormalUser = true;
     description = "Michael Ruppen";
-    extraGroups = ["networkmanager" "wheel" "podman" "adbusers"];
+    #extraGroups = ["networkmanager" "wheel" "podman" "adbusers"];
+    extraGroups = ["networkmanager" "wheel" "docker" "adbusers"];
     packages = with pkgs; [
       tree
     ];
@@ -148,7 +152,6 @@
     android-tools
     android-file-transfer 
     ir-lv2
-    qemu
   ];
 
   system.stateVersion = "26.05"; # Did you read the comment?
