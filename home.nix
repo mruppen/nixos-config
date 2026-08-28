@@ -108,6 +108,11 @@ in {
     reaper
   ];
 
+  home.sessionVariables = {
+    DOCKER_HOST = "unix:///run/docker.sock";
+    TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE = "/run/docker.sock";
+  };
+
   fonts.fontconfig.enable = true;
 
   xdg.configFile =
