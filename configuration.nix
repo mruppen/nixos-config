@@ -147,7 +147,8 @@
     direnv
     android-tools
     android-file-transfer 
-    ir-lv2 
+    ir-lv2
+    qemu
   ];
 
   system.stateVersion = "26.05"; # Did you read the comment?
