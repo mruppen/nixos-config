@@ -25,6 +25,7 @@ in {
   imports = [
     ./modules/theme.nix
     inputs.zen-browser.homeModules.beta
+    inputs.noctalia.homeModules.default
     # inputs.reaper-flake.homeModules.reaper
   ];
 
@@ -49,6 +50,8 @@ in {
   };
 
   programs.zen-browser.enable = true;
+
+  programs.noctalia.enable = true;
 
   programs.vscode = {
     enable = true;
@@ -107,11 +110,6 @@ in {
     teams-for-linux
     reaper
   ];
-
-  home.sessionVariables = {
-    DOCKER_HOST = "unix:///run/docker.sock";
-    TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE = "/run/docker.sock";
-  };
 
   fonts.fontconfig.enable = true;
 

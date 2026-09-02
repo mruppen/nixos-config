@@ -78,7 +78,7 @@ layout {
     }
 }
 
-spawn-at-startup "noctalia-shell"
+spawn-at-startup "noctalia"
 
 hotkey-overlay {
      skip-at-startup
@@ -138,6 +138,19 @@ window-rule {
     clip-to-geometry true
 }
 
+// Floating Noctalia settings window.
+window-rule {
+  match app-id="dev.noctalia.Noctalia"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
+}
+
+debug {
+  // Allows notification actions and window activation from Noctalia.
+  honor-xdg-activation-with-invalid-serial
+}
+
 binds {
     // `niri msg action do-something`.
 
@@ -146,7 +159,8 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
-    Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    // Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.

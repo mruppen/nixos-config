@@ -16,13 +16,8 @@
 
     #zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
-    quickshell = {
-      url = "github:outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell/legacy-v4";
+      url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -43,6 +38,7 @@
     self,
     nixpkgs,
     agenix,
+    noctalia,
     reaper-flake,
     ...
   } @ inputs: let
