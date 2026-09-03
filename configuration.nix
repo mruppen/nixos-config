@@ -90,8 +90,7 @@
   users.users.michael = {
     isNormalUser = true;
     description = "Michael Ruppen";
-    #extraGroups = ["networkmanager" "wheel" "podman" "adbusers"];
-    extraGroups = ["networkmanager" "wheel" "docker" "adbusers"];
+    extraGroups = ["networkmanager" "wheel" "docker" "adbusers" "audio"];
     packages = with pkgs; [
       tree
     ];
@@ -152,6 +151,7 @@
     android-tools
     android-file-transfer
     ir-lv2
+    qpwgraph
   ];
 
   system.stateVersion = "26.05"; # Did you read the comment?
