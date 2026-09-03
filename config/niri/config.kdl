@@ -20,7 +20,7 @@ input {
 // Remember to uncomment the node by removing "/-"!
 output "eDP-1" {
     mode "2560x1440@165.003"
-    scale 1.5
+    scale 1.07
     transform "normal"
     position x=0 y=0
 }
