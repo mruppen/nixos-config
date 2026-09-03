@@ -53,12 +53,12 @@
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
-		
+
     # Configure clock settings
     extraConfig.pipewire."92-low-latency" = {
       "context.properties" = {
         "default.clock.rate" = 48000;
-        "default.clock.allowed-rates" = [ 44100 48000 96000 ];
+        "default.clock.allowed-rates" = [44100 48000 96000];
         "default.clock.quantum" = 64;
         "default.clock.min-quantum" = 32;
         "default.clock.max-quantum" = 2048;
@@ -84,7 +84,6 @@
     #};
     docker = {
       enable = true;
-
     };
   };
 
@@ -102,6 +101,7 @@
   programs.nix-ld.enable = true;
   programs.firefox.enable = true;
   programs.niri.enable = true;
+  programs.hyprland.enable = true;
   programs.fish.enable = true;
 
   powerManagement.enable = true;
@@ -150,7 +150,7 @@
     oh-my-fish
     direnv
     android-tools
-    android-file-transfer 
+    android-file-transfer
     ir-lv2
   ];
 
