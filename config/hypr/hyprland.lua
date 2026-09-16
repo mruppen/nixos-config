@@ -215,6 +215,9 @@ hl.config({
 
 		touchpad = {
 			natural_scroll = false,
+			tap_to_click = false,
+			tap_and_drag = false,
+			disable_while_typing = true,
 		},
 	},
 })
@@ -364,6 +367,19 @@ hl.window_rule({
 	match = { class = "dev.noctalia.Noctalia" },
 	float = true,
 	size = { 1080, 920 },
+})
+
+-- REAPER dialog rules
+hl.window_rule({
+	name = "reaper-center-rule",
+	match = {
+		class = "[Rr][Ee][Aa][Pp][Ee][Rr]",
+		xwayland = true,
+		float = true,
+		title = "negative:^menu$",
+	},
+	center = true,
+	no_anim = true,
 })
 -- For Noctalia Color templates
 require("noctalia").apply_theme()
