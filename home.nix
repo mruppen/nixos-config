@@ -109,7 +109,6 @@ in {
     wl-clipboard
     teams-for-linux
     reaper
-    freecad
   ];
 
   fonts.fontconfig.enable = true;
