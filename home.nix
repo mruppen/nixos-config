@@ -82,6 +82,7 @@ in {
     pcmanfm
     bitwig-studio
     proton-pass
+    protonmail-desktop
     signal-desktop
     onlyoffice-desktopeditors
     dnslookup
