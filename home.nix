@@ -59,8 +59,8 @@ in {
     profiles.default.extensions = with pkgs.vscode-extensions; [
       kamadorueda.alejandra
       hashicorp.terraform
-      ms-dotnettools.vscodeintellicode-csharp
       ms-dotnettools.csharp
+      github.copilot-chat
       ms-vscode.powershell
       zaaack.markdown-editor
       jnoortheen.nix-ide
