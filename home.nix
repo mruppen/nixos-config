@@ -110,6 +110,7 @@ in {
     wl-clipboard
     teams-for-linux
     reaper
+    opencode
   ];
 
   fonts.fontconfig.enable = true;
