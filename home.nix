@@ -96,10 +96,6 @@ in {
     )
     dotnet-ef
     roslyn-ls
-    azure-cli
-    azure-cli-extensions.ssh
-    azure-cli-extensions.bastion
-    terraform
     openssl
     nerd-fonts.jetbrains-mono
     testdisk
