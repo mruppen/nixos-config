@@ -107,6 +107,7 @@ in {
     teams-for-linux
     reaper
     opencode
+    kicad
   ];
 
   fonts.fontconfig.enable = true;
