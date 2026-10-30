@@ -105,9 +105,9 @@ in {
     markdownlint-cli2
     wl-clipboard
     teams-for-linux
-    reaper
+    #reaper
     opencode
-    kicad
+    #kicad
   ];
 
   fonts.fontconfig.enable = true;
