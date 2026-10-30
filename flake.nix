@@ -31,7 +31,7 @@
       };
     };
 
-    reaper-flake.url = "github:9Prestidigitator/reaper-flake";
+    #reaper-flake.url = "github:9Prestidigitator/reaper-flake";
   };
 
   outputs = {
@@ -39,7 +39,7 @@
     nixpkgs,
     agenix,
     noctalia,
-    reaper-flake,
+    #reaper-flake,
     ...
   } @ inputs: let
     username = "michael";
