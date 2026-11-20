@@ -67,7 +67,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    jack.enable = true;
   };
 
   services.avahi = {
@@ -116,6 +115,7 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.problems.handlers = {
     citrix-workspace.broken = "warn"; # or "ignore"
+    "gtk+".broken = "warn";
   };
   environment.systemPackages = with pkgs; [
     vim
